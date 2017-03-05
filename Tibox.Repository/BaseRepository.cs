@@ -1,63 +1,59 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tibox.Models;
-using System.Configuration;
-using Dapper.Contrib.Extensions;
 
 namespace Tibox.Repository
 {
-    public class Repository : IRepository
+    public class BaseRepository<T> : IRepository<T> where T : class
     {
-
-        private readonly string _conecctionString;
-
-        public Repository() {
+        protected readonly string _conecctionString;
+        public BaseRepository()
+        {
             _conecctionString = ConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ConnectionString;
         }
-
-        public object ConfigurationManeger { get; private set; }
-
-        public bool DeleteCustomer(Customer customer)
-        {
-            using (var connection = new SqlConnection(_conecctionString))
-            {                
-                return connection.Delete(customer); ;
-            }
-        }
-
-        public IEnumerable<Customer> GetAllCustomer()
+        public bool Delete(T entity)
         {
             using (var connection = new SqlConnection(_conecctionString))
             {
-                 return connection.GetAll<Customer>();
+                return connection.Delete(entity);
             }
         }
 
-        public Customer GetCustomerById(int id)
+        public IEnumerable<T> GetAll()
         {
             using (var connection = new SqlConnection(_conecctionString))
             {
-                return connection.Get<Customer>(id);
+                return connection.GetAll<T>();
             }
         }
 
-        public int InsertCustomer(Customer customer)
+        public T GetEntityById(int id)
         {
             using (var connection = new SqlConnection(_conecctionString))
             {
-                return (int)connection.Insert(customer);
+                return connection.Get<T>(id);
             }
         }
 
-        public bool UpdateCustomer(Customer customer)
+        public int Insert(T entity)
         {
             using (var connection = new SqlConnection(_conecctionString))
             {
-                return connection.Update(customer);
+                return (int)connection.Insert(entity);
+            }
+        }
+
+        public bool Update(T entity)
+        {
+            using (var connection = new SqlConnection(_conecctionString))
+            {
+                return connection.Update(entity);
             }
         }
     }

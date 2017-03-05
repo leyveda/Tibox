@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Repository", "Tibox.R
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{C935D3C5-0814-464C-ADCA-F54A4ECF0D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Repository.Tests", "Tibox.Repository.Tests\Tibox.Repository.Tests.csproj", "{3C98D111-1DA7-4E64-B4A6-F65F00FD06E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.DataAccess.Tests", "Tibox.Repository.Tests\Tibox.DataAccess.Tests.csproj", "{3C98D111-1DA7-4E64-B4A6-F65F00FD06E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
