@@ -76,7 +76,7 @@ namespace Tibox.DataAccess.Tests
         [TestMethod]
         public void OrderWithOrderItem()
         {
-            var ordenes = _unitOfWork.Orden.OrderWithOrderItems(10);
+            var ordenes = _unitOfWork.Orden.OrderWithOrderItems("542379");
             Assert.AreEqual(ordenes != null, true);
             Assert.AreEqual(ordenes.Ordernes, true);
         }
