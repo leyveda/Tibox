@@ -78,5 +78,14 @@ namespace Tibox.DataAccess.Tests
             Assert.AreEqual(customer.FirstName,"Maria");
             Assert.AreEqual(customer.LastName,"Anders");
         }
+
+        [TestMethod]
+        public void Customer_With_Orders()
+        {
+            var customer = _unitOfWork.Customers.CustomerWithOrders(7);
+            Assert.AreEqual(customer != null, true);
+
+            Assert.AreEqual(customer.Orders.Any(), true);
+        }
     }
 }
