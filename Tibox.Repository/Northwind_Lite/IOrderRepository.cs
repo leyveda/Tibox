@@ -10,7 +10,7 @@ namespace Tibox.Repository.Northwind_Lite
     public interface IOrderRepository : IRepository<Order>
     {
         Order OrderSearchByOrderNumber(string OrderNumber);
-        Order OrderWithOrderItems(String ordername);
+        Order OrderWithOrderItems(int OrderNumber);
 
         
     }

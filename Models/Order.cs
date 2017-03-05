@@ -13,6 +13,6 @@ namespace Tibox.Models
         public int CustomerId { get; set; }
         public decimal? TotalAmount { get; set; }
 
-        public IEnumerable<OrderItem> Ordernes { get; set; }
+        public IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

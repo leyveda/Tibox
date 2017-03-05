@@ -12,12 +12,12 @@ namespace Tibox.Repository.Northwind_Lite
 {
     public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public Order OrderWithOrderItems(String ordername)
+        public Order OrderWithOrderItems(int OrderNumber)
         {
             using (var connection = new SqlConnection(_conecctionString))
             {
                 var parameters = new DynamicParameters();
-                parameters.Add("@OrderNumber", ordername);
+                parameters.Add("@OrderNumber", OrderNumber);
 
                 using (var multiple = connection
                     .QueryMultiple("dbo.OrderWithOrdersItems",
@@ -25,7 +25,7 @@ namespace Tibox.Repository.Northwind_Lite
                     commandType: CommandType.StoredProcedure))
                 {
                     var order = multiple.Read<Order>().Single();
-                    order.Ordernes = multiple.Read<OrderItem>();
+                    order.OrderItems = multiple.Read<OrderItem>();
                     return order;
                 }
             }
