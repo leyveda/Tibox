@@ -4,22 +4,23 @@ using System.Linq;
 using Tibox.Repository;
 using Tibox.Models;
 using Tibox.Repository.Northwind_Lite;
+using Tibox.UnitOfWork;
 
 namespace Tibox.DataAccess.Tests
 {
     [TestClass]
     public class CustomerRepositoryTest
     {
-        private readonly ICustomerRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         public CustomerRepositoryTest()
         {
-            _repository = new CustomerRepository();
+            _unitOfWork = new TiboxUnitOfWork();
         }
 
         [TestMethod]
         public void Get_All_Customers()
         {
-            var result = _repository.GetAll();
+            var result = _unitOfWork.Customers.GetAll();
             Assert.AreEqual(result.Count() > 0, true);
         }
 
@@ -34,14 +35,14 @@ namespace Tibox.DataAccess.Tests
                 Country = "Peru",
                 Phone = "555-555-555"
             };
-            var result = _repository.Insert(customer);
+            var result = _unitOfWork.Customers.Insert(customer);
             Assert.AreEqual(result > 0, true);
         }
 
         [TestMethod]
         public void First_Customer_By_Id()
         {
-            var customer = _repository.GetEntityById(1);
+            var customer = _unitOfWork.Customers.GetEntityById(1);
             Assert.AreEqual(customer != null, true);
 
             Assert.AreEqual(customer.Id, 1);
@@ -52,25 +53,25 @@ namespace Tibox.DataAccess.Tests
         [TestMethod]
         public void Delete_Customer()
         {
-            var customer = _repository.GetEntityById(93);
+            var customer = _unitOfWork.Customers.GetEntityById(93);
             Assert.AreEqual(customer != null, true);
 
-            Assert.AreEqual(_repository.Delete(customer), true);
+            Assert.AreEqual(_unitOfWork.Customers.Delete(customer), true);
         }
 
         [TestMethod]
         public void Update_Customer()
         {
-            var customer = _repository.GetEntityById(1);
+            var customer = _unitOfWork.Customers.GetEntityById(1);
             Assert.AreEqual(customer != null, true);
 
-            Assert.AreEqual(_repository.Update(customer), true);
+            Assert.AreEqual(_unitOfWork.Customers.Update(customer), true);
         }
 
         [TestMethod]
         public void Customer_By_Names()
         {
-            var customer = _repository.SearchByNames("Maria","Anders");
+            var customer = _unitOfWork.Customers.SearchByNames("Maria","Anders");
             Assert.AreEqual(customer != null, true);
 
             Assert.AreEqual(customer.Id,1);

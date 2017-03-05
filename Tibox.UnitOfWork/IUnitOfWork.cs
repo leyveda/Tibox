@@ -13,7 +13,7 @@ namespace Tibox.UnitOfWork
     {
         ICustomerRepository Customers { get; }
         IRepository<Order> Orders { get; }
-        IRepository<OrderItem> OrdeOrderItemrs { get; }
+        IRepository<OrderItem> OrdeOrderItems { get; }
         IRepository<Product> Products { get; }
         IRepository<Supplier> Suppliers { get; }
     }
