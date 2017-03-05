@@ -1,4 +1,5 @@
 using Dapper.Contrib.Extensions;
+using System.Collections.Generic;
 
 namespace Tibox.Models
 {
@@ -12,5 +13,8 @@ namespace Tibox.Models
         public string City { get; set; }
         public string Country { get; set; }
         public string Phone { get; set; }
+
+        public IEnumerable<Order> Orders { get; set; }
+        
     }
 }

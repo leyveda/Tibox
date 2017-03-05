@@ -9,5 +9,6 @@ namespace Tibox.Repository.Northwind_Lite
 {
     public interface ICustomerRepository : IRepository<Customer> {
         Customer SearchByNames(string firtsname,string lastname);
+        Customer CustomerWithOrders(int id);
     }
 }
