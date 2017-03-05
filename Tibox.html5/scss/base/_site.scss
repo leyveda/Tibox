@@ -18,14 +18,12 @@
     }
 
     footer{
-        background-color:$site-color-black;
-        color:$site-color-white;
-        height: 2rem;
         position:absolute;
         right:0;
         left:0;
-        bottom:0;
-        text-align:center;
+        top:0;
+        background-color:$site-color-black;
+        height:4rem;
     }
 
 }
