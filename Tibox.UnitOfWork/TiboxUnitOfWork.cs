@@ -13,6 +13,7 @@ namespace Tibox.UnitOfWork
     {
         public TiboxUnitOfWork() {
             Customers = new CustomerRepository();
+            Orden = new OrderRepository();
             Orders = new BaseRepository<Order>();
             OrdeOrderItems = new BaseRepository<OrderItem>();
             Products = new BaseRepository<Product>();
@@ -20,11 +21,13 @@ namespace Tibox.UnitOfWork
         }
 
         public ICustomerRepository Customers { get; private set; }
+        public IOrderRepository Orden { get; private set; }
         public IRepository<Order> Orders { get; private set; }
         public IRepository<OrderItem> OrdeOrderItems { get; private set; }
         public IRepository<Product> Products { get; private set; }
         public IRepository<Supplier> Suppliers { get; private set; }
-              
+
+        
 
         public void Dispose()
         {

@@ -12,6 +12,8 @@ namespace Tibox.UnitOfWork
     public interface IUnitOfWork
     {
         ICustomerRepository Customers { get; }
+        IOrderRepository Orden { get; }
+
         IRepository<Order> Orders { get; }
         IRepository<OrderItem> OrdeOrderItems { get; }
         IRepository<Product> Products { get; }
