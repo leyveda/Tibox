@@ -8,22 +8,30 @@
         padding-right:4rem;
     }
 
-    header{
-        position:absolute;
-        right:0;
-        left:0;
-        top:0;
-        background-color:$site-color-black;
-        height:4rem;
+    header {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        background-color: $site-color-black;
+        height: 4rem;
     }
 
     footer{
-        position:absolute;
-        right:0;
-        left:0;
-        top:0;
-        background-color:$site-color-black;
-        height:4rem;
+       background-color:  $site-color-black;
+       color: $site-color-white;
+       height: 2rem;
+       position: absolute;
+       right: 0;
+       left: 0;
+       bottom: 0;
+       text-align: center;
     }
+
+    section{
+        padding-top: 5rem;
+    }
+
+    
 
 }
