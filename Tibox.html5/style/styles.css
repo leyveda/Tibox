@@ -33,4 +33,15 @@ body {
     text-align: center; }
   body section {
     padding-top: 5rem; }
+  body nav {
+    vertical-align: middle; }
+    body nav ul li {
+      float: left;
+      padding: 0 1rem 0 1rem; }
+      body nav ul li a {
+        color: #ffffff; }
+      body nav ul li button {
+        background-image: url("../../imagenes/imagenprueba.PNG");
+        width: 4rem;
+        height: 2rem; }
 

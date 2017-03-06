@@ -14,7 +14,7 @@
         left: 0;
         top: 0;
         background-color: $site-color-black;
-        height: 4rem;
+        height: 4rem;       
     }
 
     footer{
@@ -32,6 +32,24 @@
         padding-top: 5rem;
     }
 
+    nav{
+        vertical-align:middle;
+          
+        ul{                        
+            li{
+                float:left;
+                padding:0 1rem 0 1rem;
+                a{
+                    color:#ffffff;
+                }
+                button{
+                    background-image:url("../../imagenes/imagenprueba.PNG");
+                    width:4rem;
+                    height:2rem;
+                }                
+            }
+        }
+    }
     
 
 }
