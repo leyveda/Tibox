@@ -1,55 +1,206 @@
 ﻿body {
     background-color:$background-color;
-    padding-left:2rem;
-    padding-right:2rem;
+    
+    @include break-point(xs){
+        padding-left:2rem;
+        padding-right:2rem;
 
+        header {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            background-color: $site-color-black;
+            height: 4rem;       
+        }
+
+        footer{
+           background-color:  $site-color-black;
+           color: $site-color-white;
+           height: 2rem;
+           position: absolute;
+           right: 0;
+           left: 0;
+           bottom: 0;
+           text-align: center;
+        }
+
+        section{
+            h2{
+                text-align:center;
+                width:100%;
+            }
+            padding-top: 4rem;        
+            text-align: justify;
+            font-size :18px;
+            font-family:'Segoe UI';
+        }
+
+        nav{
+            vertical-align:middle;
+          
+            ul{                        
+                li{
+                    float:left;
+                    padding:0 1rem 0 1rem;
+                    a{
+                        color:$site-color-white;
+                    }
+                    button{
+                        background-image:$background-imagen;
+                        width:4rem;
+                        height:2rem;
+                    }                
+                }
+            }
+        }
+    }
+    @include break-point(sm){
+        padding-left:4rem;
+        padding-right:4rem;
+
+        header {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            background-color: $site-color-black;
+            height: 4rem;       
+        }
+
+        footer{
+           background-color:  $site-color-black;
+           color: $site-color-white;
+           height: 4rem;
+           position: absolute;
+           right: 0;
+           left: 0;
+           bottom: 0;
+           text-align: center;
+        }
+
+        section{
+            padding-top: 4rem;        
+            text-align: justify;
+        }
+
+        nav{
+            vertical-align:middle;
+          
+            ul{                        
+                li{
+                    float:left;
+                    padding:0 2rem 0 2rem;
+                    a{
+                        color:$site-color-white;
+                    }
+                    button{
+                        background-image:$background-imagen;
+                        width:4rem;
+                        height:2rem;
+                    }                
+                }
+            }
+        }
+    }
     @include break-point(md){
         padding-left:4rem;
         padding-right:4rem;
-    }
 
-    header {
+        header {
         position: absolute;
         right: 0;
         left: 0;
         top: 0;
         background-color: $site-color-black;
         height: 4rem;       
-    }
+        }
 
-    footer{
-       background-color:  $site-color-black;
-       color: $site-color-white;
-       height: 2rem;
-       position: absolute;
-       right: 0;
-       left: 0;
-       bottom: 0;
-       text-align: center;
-    }
+        footer{
+           background-color:  $site-color-black;
+           color: $site-color-white;
+           height: 4rem;
+           position: absolute;
+           right: 0;
+           left: 0;
+           bottom: 0;
+           text-align: center;
+        }
 
-    section{
-        padding-top: 5rem;
-    }
+        section{
+            padding-top: 5rem;        
+            text-align: justify;
+        }
 
-    nav{
-        vertical-align:middle;
+        nav{
+            vertical-align:middle;
           
-        ul{                        
-            li{
-                float:left;
-                padding:0 1rem 0 1rem;
-                a{
-                    color:#ffffff;
+            ul{                        
+                li{
+                    float:left;
+                    padding:0 1rem 0 1rem;
+                    a{
+                        color:$site-color-white;
+                    }
+                    button{
+                        background-image:$background-imagen;
+                        width:4rem;
+                        height:2rem;
+                    }                
                 }
-                button{
-                    background-image:url("../../imagenes/imagenprueba.PNG");
-                    width:4rem;
-                    height:2rem;
-                }                
             }
         }
     }
+    @include break-point(lg){
+        padding-left:2rem;
+        padding-right:2rem;
+
+        header {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            background-color: $site-color-black;
+            height: 4rem;       
+        }
+
+        footer{
+           background-color: $site-color-black;
+           color: $site-color-white;
+           height: 2rem;
+           position: absolute;
+           right: 0;
+           left: 0;
+           bottom: 0;
+           text-align: center;
+        }
+
+        section{
+            padding-top: 5rem;        
+            text-align: justify;
+        }
+
+        nav{
+            vertical-align:middle;
+          
+            ul{                        
+                li{
+                    float:left;
+                    padding:0 1rem 0 1rem;
+                    a{
+                        color:$site-color-white;
+                    }
+                    button{
+                        background-image:$background-imagen;
+                        width:4rem;
+                        height:2rem;
+                    }                
+                }
+            }
+        }
+    }
+
+    
     
 
 }

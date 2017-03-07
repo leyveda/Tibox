@@ -1,10 +1,10 @@
 ﻿@mixin break-point($breakpoint){
     $bp-xs:"(max-width:420px)";
     $bp-sm:"(min-width:420px)";
-    $bp-md:"(mix-width:768px)";
-    $bp-lg:"(mix-width:1024px)";
-    $bp-xl:"(mix-width:1280px)";
-    $bp-xxl:"(mix-width:1900px)";
+    $bp-md:"(min-width:768px)";
+    $bp-lg:"(min-width:1024px)";
+    $bp-xl:"(min-width:1280px)";
+    $bp-xxl:"(min-width:1900px)";
 
     @if($breakpoint==xs){
         @media #{$bp-xs}{@content;}
